@@ -31,7 +31,7 @@ export async function getNewsArticles(params: GetNewsParams): Promise<{
   });
 
   return {
-    articles: (response.data ?? []).map((item) => ({ id: item.id, ...item.attributes })),
+    articles: (response.data ?? []).map((item) => (item.attributes)),
     pagination: response.meta.pagination ?? { page: 1, pageSize: 10, pageCount: 1, total: 0 },
   };
 }
@@ -48,7 +48,7 @@ export async function getNewsBySlug(
     },
   });
   const item = response.data?.[0];
-  return item ? { id: item.id, ...item.attributes } : null;
+  return item ? item.attributes : null;
 }
 
 export async function getLatestNews(
@@ -63,5 +63,5 @@ export async function getLatestNews(
       'populate': 'cover_image,category',
     },
   });
-  return (response.data ?? []).map((item) => ({ id: item.id, ...item.attributes }));
+  return (response.data ?? []).map((item) => (item.attributes));
 }

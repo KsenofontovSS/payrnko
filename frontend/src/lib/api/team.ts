@@ -9,5 +9,5 @@ export async function getTeamMembers(locale: string): Promise<TeamMember[]> {
       'populate': 'photo',
     },
   });
-  return (response.data ?? []).map((item) => ({ id: item.id, ...item.attributes }));
+  return (response.data ?? []).map((item) => (item.attributes));
 }

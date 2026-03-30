@@ -6,7 +6,7 @@ export async function getServices(locale: string): Promise<Service[]> {
     locale,
     params: { 'sort[0]': 'order:asc' },
   });
-  return (response.data ?? []).map((item) => ({ id: item.id, ...item.attributes }));
+  return (response.data ?? []).map((item) => (item.attributes));
 }
 
 export async function getServiceBySlug(
@@ -18,5 +18,5 @@ export async function getServiceBySlug(
     params: { 'filters[slug][$eq]': slug },
   });
   const item = response.data?.[0];
-  return item ? { id: item.id, ...item.attributes } : null;
+  return item ? item.attributes : null;
 }

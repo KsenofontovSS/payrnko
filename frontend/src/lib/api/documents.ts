@@ -26,5 +26,5 @@ export async function getDocuments(params: GetDocumentsParams = {}): Promise<Doc
     params: queryParams,
   });
 
-  return (response.data ?? []).map((item) => ({ id: item.id, ...item.attributes }));
+  return (response.data ?? []).map((item) => (item.attributes));
 }

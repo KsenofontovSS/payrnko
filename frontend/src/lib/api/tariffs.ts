@@ -6,5 +6,5 @@ export async function getTariffs(locale: string): Promise<Tariff[]> {
     locale,
     params: { 'sort[0]': 'order:asc' },
   });
-  return (response.data ?? []).map((item) => ({ id: item.id, ...item.attributes }));
+  return (response.data ?? []).map((item) => (item.attributes));
 }
