@@ -28,8 +28,8 @@ export default function NewsDetailPage({
   const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/ru' },
-    { label: t('title'), href: '/ru/news' },
+    { label: tNav('home'), href: '/' },
+    { label: t('title'), href: '/news' },
     { label: article.title },
   ];
 
@@ -66,19 +66,19 @@ export default function NewsDetailPage({
         {/* Навигация prev/next */}
         <div className="mt-12 pt-8 border-t border-silver flex items-center justify-between">
           {prevArticle ? (
-            <Button variant="ghost" href={`/ru/news/${prevArticle.slug}`}>
+            <Button variant="ghost" href={`/news/${prevArticle.slug}`}>
               ← {prevArticle.title.slice(0, 30)}...
             </Button>
           ) : <div />}
           {nextArticle ? (
-            <Button variant="ghost" href={`/ru/news/${nextArticle.slug}`}>
+            <Button variant="ghost" href={`/news/${nextArticle.slug}`}>
               {nextArticle.title.slice(0, 30)}... →
             </Button>
           ) : <div />}
         </div>
 
         <div className="mt-8 text-center">
-          <Button variant="secondary" href="/ru/news">
+          <Button variant="secondary" href="/news">
             {t('backToNews')}
           </Button>
         </div>

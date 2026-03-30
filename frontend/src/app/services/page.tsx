@@ -16,7 +16,7 @@ export default function ServicesPage() {
   const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/ru' },
+    { label: tNav('home'), href: '/' },
     { label: t('title') },
   ];
 
@@ -41,7 +41,7 @@ export default function ServicesPage() {
               <Typography variant="bodySmall" color="secondary" className="mb-4 flex-1">
                 {service.short_description}
               </Typography>
-              <Button variant="ghost" size="sm" href={`/ru/services/${service.slug}`}>
+              <Button variant="ghost" size="sm" href={`/services/${service.slug}`}>
                 Подробнее →
               </Button>
             </Card>

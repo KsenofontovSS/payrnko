@@ -6,7 +6,7 @@ export default function PrivacyPage() {
   const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/ru' },
+    { label: tNav('home'), href: '/' },
     { label: t('title') },
   ];
 

@@ -31,7 +31,7 @@ export default function NewsPage() {
     : mockArticles.filter((a) => a.categorySlug === activeCategory);
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/ru' },
+    { label: tNav('home'), href: '/' },
     { label: t('title') },
   ];
 
@@ -63,7 +63,7 @@ export default function NewsPage() {
         {filtered.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((article) => (
-              <Card key={article.slug} as="a" href={`/ru/news/${article.slug}`} className="flex flex-col h-full">
+              <Card key={article.slug} as="a" href={`/news/${article.slug}`} className="flex flex-col h-full">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-sm text-cool-gray">
                     {formatDate(article.published_date, 'ru')}

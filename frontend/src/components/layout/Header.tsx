@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { MobileMenu } from './MobileMenu';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { AccessibilityPanel } from '@/components/accessibility/AccessibilityPanel';
 
 interface DropdownItem {
@@ -32,30 +31,30 @@ export function Header() {
     {
       label: t('nav.about'),
       dropdown: [
-        { label: 'Руководство', href: '/ru/about' },
-        { label: 'Документы', href: '/ru/about#documents' },
-        { label: 'Реквизиты', href: '/ru/about#requisites' },
+        { label: 'Руководство', href: '/about' },
+        { label: 'Документы', href: '/about#documents' },
+        { label: 'Реквизиты', href: '/about#requisites' },
       ],
     },
     {
       label: t('nav.services'),
       dropdown: [
-        { label: 'Расчётные услуги', href: '/ru/services' },
-        { label: 'Переводы', href: '/ru/services#transfers' },
-        { label: 'Эквайринг', href: '/ru/services#acquiring' },
+        { label: 'Расчётные услуги', href: '/services' },
+        { label: 'Переводы', href: '/services#transfers' },
+        { label: 'Эквайринг', href: '/services#acquiring' },
       ],
     },
-    { label: t('nav.tariffs'), href: '/ru/tariffs' },
+    { label: t('nav.tariffs'), href: '/tariffs' },
     {
       label: t('nav.disclosure'),
       dropdown: [
-        { label: 'Отчётность', href: '/ru/disclosure' },
-        { label: 'Нормативы', href: '/ru/disclosure#standards' },
-        { label: 'Аудит', href: '/ru/disclosure#audit' },
-        { label: 'Управление рисками', href: '/ru/disclosure#risks' },
+        { label: 'Отчётность', href: '/disclosure' },
+        { label: 'Нормативы', href: '/disclosure#standards' },
+        { label: 'Аудит', href: '/disclosure#audit' },
+        { label: 'Управление рисками', href: '/disclosure#risks' },
       ],
     },
-    { label: t('nav.news'), href: '/ru/news' },
+    { label: t('nav.news'), href: '/news' },
   ];
 
   useEffect(() => {
@@ -158,13 +157,11 @@ export function Header() {
 
             {/* Правая часть */}
             <div className="flex items-center gap-2">
-              <LanguageSwitcher />
-
               <div className="relative">
                 <AccessibilityPanel />
               </div>
 
-              <Button variant="primary" size="sm" href="/ru/contacts" className="hidden sm:inline-flex">
+              <Button variant="primary" size="sm" href="/contacts" className="hidden sm:inline-flex">
                 {t('nav.contacts')}
               </Button>
 

@@ -44,7 +44,7 @@ export default function DisclosurePage() {
   });
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/ru' },
+    { label: tNav('home'), href: '/' },
     { label: t('title') },
   ];
 

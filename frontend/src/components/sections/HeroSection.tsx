@@ -52,10 +52,10 @@ export function HeroSection({ title, subtitle, ctaServices, ctaContacts }: HeroS
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.6, ease: [0.4, 0, 0.2, 1] }}
         >
-          <Button variant="cta" size="lg" href="/ru/services">
+          <Button variant="cta" size="lg" href="/services">
             {ctaServices}
           </Button>
-          <Button variant="secondary" size="lg" href="/ru/contacts" className="border-white text-white hover:bg-white/10">
+          <Button variant="secondary" size="lg" href="/contacts" className="border-white text-white hover:bg-white/10">
             {ctaContacts}
           </Button>
         </motion.div>

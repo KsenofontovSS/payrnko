@@ -12,7 +12,7 @@ export function CTASection({ title, buttonLabel }: CTASectionProps) {
         <Typography variant="h2" color="white" className="mb-8">
           {title}
         </Typography>
-        <Button variant="cta" size="lg" href="/ru/contacts">
+        <Button variant="cta" size="lg" href="/contacts">
           {buttonLabel}
         </Button>
       </Container>

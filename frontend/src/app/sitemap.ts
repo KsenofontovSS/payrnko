@@ -15,20 +15,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/privacy',
   ];
 
-  const locales = ['ru', 'en'];
-
-  const entries: MetadataRoute.Sitemap = [];
-
-  for (const route of routes) {
-    for (const locale of locales) {
-      entries.push({
-        url: `${BASE_URL}/${locale}${route}`,
-        lastModified: new Date(),
-        changeFrequency: route === '' ? 'daily' : 'weekly',
-        priority: route === '' ? 1.0 : 0.8,
-      });
-    }
-  }
-
-  return entries;
+  return routes.map((route) => ({
+    url: `${BASE_URL}${route}`,
+    lastModified: new Date(),
+    changeFrequency: route === '' ? 'daily' : 'weekly',
+    priority: route === '' ? 1.0 : 0.8,
+  }));
 }

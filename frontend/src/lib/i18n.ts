@@ -1,9 +1,4 @@
-import ruMessages from '@/i18n/messages/ru.json';
-import enMessages from '@/i18n/messages/en.json';
-
-type Messages = typeof ruMessages;
-
-const messagesMap: Record<string, Messages> = { ru: ruMessages, en: enMessages };
+import messages from '@/i18n/messages/ru.json';
 
 function getNestedValue(obj: Record<string, unknown>, path: string): string {
   const keys = path.split('.');
@@ -18,9 +13,7 @@ function getNestedValue(obj: Record<string, unknown>, path: string): string {
   return typeof current === 'string' ? current : path;
 }
 
-export function createTranslator(locale: string, namespace?: string) {
-  const messages = messagesMap[locale] ?? ruMessages;
-
+export function createTranslator(_locale: string, namespace?: string) {
   return (key: string, params?: Record<string, string | number>) => {
     const fullKey = namespace ? `${namespace}.${key}` : key;
     let value = getNestedValue(messages as unknown as Record<string, unknown>, fullKey);
