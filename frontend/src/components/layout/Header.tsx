@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui';
@@ -22,7 +22,7 @@ interface NavItem {
 }
 
 export function Header() {
-  const t = useTranslations('common');
+  const t = createTranslator('ru', 'common');
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);

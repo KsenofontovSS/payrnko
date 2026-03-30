@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Container, Section, Typography, Breadcrumbs } from '@/components/ui';
 import { ContactForm } from '@/components/forms/ContactForm';
@@ -14,8 +14,8 @@ const contactInfo = {
 };
 
 export default function ContactsPage() {
-  const t = useTranslations('contacts');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'contacts');
+  const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
     { label: tNav('home'), href: '/' },

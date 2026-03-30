@@ -1,4 +1,6 @@
-import { useTranslations } from 'next-intl';
+'use client';
+
+import { createTranslator } from '@/lib/i18n';
 import { HeroSection, ServicesSection, TrustSection, NewsPreviewSection, CTASection } from '@/components/sections';
 import type { Service, NewsArticle } from '@/types/api';
 
@@ -19,7 +21,7 @@ const mockNews: (NewsArticle & { id: number })[] = [
 ];
 
 export default function HomePage() {
-  const t = useTranslations('home');
+  const t = createTranslator('ru', 'home');
 
   return (
     <>

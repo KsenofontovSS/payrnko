@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Info } from 'lucide-react';
 import { Container, Section, Typography, Breadcrumbs, DocumentCard } from '@/components/ui';
 import type { DocumentCategory } from '@/types/api';
@@ -32,8 +32,8 @@ const categoryKeys: DocumentCategory[] = ['financial', 'standards', 'audit', 'ri
 const years = [2026, 2025, 2024];
 
 export default function DisclosurePage() {
-  const t = useTranslations('disclosure');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'disclosure');
+  const tNav = createTranslator('ru', 'common.nav');
   const [activeCategory, setActiveCategory] = useState<DocumentCategory | 'all'>('all');
   const [activeYear, setActiveYear] = useState<number | 'all'>('all');
 

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Shield } from 'lucide-react';
 import { Container, Section, Typography, Breadcrumbs } from '@/components/ui';
 
@@ -11,8 +11,8 @@ const companyRequisites = [
 ];
 
 export default function AboutPage() {
-  const t = useTranslations('about');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'about');
+  const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
     { label: tNav('home'), href: '/' },

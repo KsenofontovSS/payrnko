@@ -1,10 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Info, Shield, FileText, Users, ExternalLink } from 'lucide-react';
 import { Container, Section, Typography, Breadcrumbs, Accordion } from '@/components/ui';
 
 export default function CompliancePage() {
-  const t = useTranslations('compliance');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'compliance');
+  const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
     { label: tNav('home'), href: '/' },

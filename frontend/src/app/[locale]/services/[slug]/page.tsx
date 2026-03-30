@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Container, Section, Typography, Breadcrumbs, Button } from '@/components/ui';
 import { CTASection } from '@/components/sections';
 
@@ -12,6 +12,10 @@ const mockServices = [
   { slug: 'currency', title: 'Валютные операции', icon_name: 'Globe', description: 'Купля-продажа иностранной валюты в безналичной форме для юридических лиц. Конкурентные курсы обмена валют.' },
 ];
 
+export function generateStaticParams() {
+  return mockServices.map((s) => ({ slug: s.slug }));
+}
+
 export default function ServiceDetailPage({
   params,
 }: {
@@ -20,8 +24,8 @@ export default function ServiceDetailPage({
   const service = mockServices.find((s) => s.slug === params.slug);
   if (!service) notFound();
 
-  const t = useTranslations('services');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'services');
+  const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
     { label: tNav('home'), href: '/' },

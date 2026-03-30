@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Container, Section, Typography, Breadcrumbs, Card, Icon, Button } from '@/components/ui';
 import type { Service } from '@/types/api';
 
@@ -12,8 +12,8 @@ const mockServices: (Service & { id: number })[] = [
 ];
 
 export default function ServicesPage() {
-  const t = useTranslations('services');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'services');
+  const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
     { label: tNav('home'), href: '/' },

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Container, Section, Typography, Breadcrumbs, Table } from '@/components/ui';
 
 interface TariffRow {
@@ -28,8 +28,8 @@ const mockTariffs: TariffRow[] = [
 const categories = ['Все', 'Расчётные операции', 'Кассовое обслуживание', 'Валютные операции', 'Инкассация', 'Прочее'];
 
 export default function TariffsPage() {
-  const t = useTranslations('tariffs');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'tariffs');
+  const tNav = createTranslator('ru', 'common.nav');
   const [activeCategory, setActiveCategory] = useState('Все');
 
   const filtered = activeCategory === 'Все'

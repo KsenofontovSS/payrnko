@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Container, Section, Typography, Breadcrumbs, Card, Badge, Button } from '@/components/ui';
 import { formatDate } from '@/lib/utils';
 
@@ -22,8 +22,8 @@ const categoryFilters = [
 ];
 
 export default function NewsPage() {
-  const t = useTranslations('news');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'news');
+  const tNav = createTranslator('ru', 'common.nav');
   const [activeCategory, setActiveCategory] = useState('all');
 
   const filtered = activeCategory === 'all'

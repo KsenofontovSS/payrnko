@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Send, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui';
 import { contactFormSchema, type ContactFormValues } from '@/lib/validations/contactForm';
@@ -11,7 +11,7 @@ import { contactFormSchema, type ContactFormValues } from '@/lib/validations/con
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
 export function ContactForm() {
-  const t = useTranslations('contacts.form');
+  const t = createTranslator('ru', 'contacts.form');
   const [status, setStatus] = useState<FormStatus>('idle');
 
   const {

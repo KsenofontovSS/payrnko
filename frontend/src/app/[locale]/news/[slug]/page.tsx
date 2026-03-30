@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Container, Section, Typography, Breadcrumbs, Badge, Button } from '@/components/ui';
 import { formatDate } from '@/lib/utils';
 
@@ -12,6 +12,10 @@ const mockArticles = [
   { slug: 'security-update', title: 'Обновление системы информационной безопасности', content: 'Завершена модернизация системы защиты информации в соответствии с требованиями ГОСТ Р 57580.', published_date: '2026-02-28', category: 'События компании' },
 ];
 
+export function generateStaticParams() {
+  return mockArticles.map((a) => ({ slug: a.slug }));
+}
+
 export default function NewsDetailPage({
   params,
 }: {
@@ -20,8 +24,8 @@ export default function NewsDetailPage({
   const article = mockArticles.find((a) => a.slug === params.slug);
   if (!article) notFound();
 
-  const t = useTranslations('news');
-  const tNav = useTranslations('common.nav');
+  const t = createTranslator('ru', 'news');
+  const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
     { label: tNav('home'), href: '/' },

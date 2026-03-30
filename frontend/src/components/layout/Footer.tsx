@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useTranslations } from 'next-intl';
+import { createTranslator } from '@/lib/i18n';
 import { Container } from '@/components/ui';
 
 const footerLinks = {
@@ -19,7 +19,7 @@ const footerLinks = {
 };
 
 export function Footer() {
-  const t = useTranslations('common');
+  const t = createTranslator('ru', 'common');
   const year = new Date().getFullYear();
 
   return (
