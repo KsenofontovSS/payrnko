@@ -3,6 +3,13 @@ node_modules/
 .pnp
 .pnp.js
 
+# Screenshots
+screenshot-*.png
+
+# Root package files (from temp tool installs)
+/package.json
+/package-lock.json
+
 # Testing
 coverage/
 test-results/
