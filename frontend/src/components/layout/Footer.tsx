@@ -4,17 +4,17 @@ import { Container } from '@/components/ui';
 
 const footerLinks = {
   company: [
-    { label: 'О компании', href: '/about' },
-    { label: 'Услуги', href: '/services' },
-    { label: 'Тарифы', href: '/tariffs' },
-    { label: 'Новости', href: '/news' },
-    { label: 'Контакты', href: '/contacts' },
+    { label: 'О компании', href: '/ru/about' },
+    { label: 'Услуги', href: '/ru/services' },
+    { label: 'Тарифы', href: '/ru/tariffs' },
+    { label: 'Новости', href: '/ru/news' },
+    { label: 'Контакты', href: '/ru/contacts' },
   ],
   disclosure: [
-    { label: 'Финансовая отчётность', href: '/disclosure' },
-    { label: 'Нормативы', href: '/disclosure#standards' },
-    { label: 'Аудит', href: '/disclosure#audit' },
-    { label: 'Управление рисками', href: '/disclosure#risks' },
+    { label: 'Финансовая отчётность', href: '/ru/disclosure' },
+    { label: 'Нормативы', href: '/ru/disclosure#standards' },
+    { label: 'Аудит', href: '/ru/disclosure#audit' },
+    { label: 'Управление рисками', href: '/ru/disclosure#risks' },
   ],
 };
 
@@ -28,7 +28,7 @@ export function Footer() {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Колонка 1: Логотип и описание */}
           <div>
-            <Link href="/" className="text-xl font-bold">
+            <Link href="/ru" className="text-xl font-bold">
               <span className="text-sky-accent">РНКО</span> ППР
             </Link>
             <p className="mt-4 text-sm text-cool-gray leading-relaxed">
@@ -108,10 +108,10 @@ export function Footer() {
         <div className="border-t border-white/10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-cool-gray">
           <p>{t('footer.copyright', { year })}</p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-white transition-colors duration-200">
+            <Link href="/ru/privacy" className="hover:text-white transition-colors duration-200">
               {t('footer.privacy')}
             </Link>
-            <Link href="/sitemap" className="hover:text-white transition-colors duration-200">
+            <Link href="/ru/sitemap" className="hover:text-white transition-colors duration-200">
               Карта сайта
             </Link>
           </div>

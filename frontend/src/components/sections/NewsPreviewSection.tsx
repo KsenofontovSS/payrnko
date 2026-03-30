@@ -18,7 +18,7 @@ export function NewsPreviewSection({ news, title, viewAllLabel, locale }: NewsPr
       <Container>
         <div className="flex items-center justify-between mb-12">
           <Typography variant="h2">{title}</Typography>
-          <Button variant="ghost" href="/news" className="hidden sm:inline-flex">
+          <Button variant="ghost" href="/ru/news" className="hidden sm:inline-flex">
             {viewAllLabel} →
           </Button>
         </div>
@@ -32,7 +32,7 @@ export function NewsPreviewSection({ news, title, viewAllLabel, locale }: NewsPr
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
-              <Card as="a" href={`/news/${article.slug}`} className="h-full flex flex-col">
+              <Card as="a" href={`/ru/news/${article.slug}`} className="h-full flex flex-col">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-sm text-cool-gray">
                     {formatDate(article.published_date, locale)}
@@ -55,7 +55,7 @@ export function NewsPreviewSection({ news, title, viewAllLabel, locale }: NewsPr
         </div>
 
         <div className="mt-8 text-center sm:hidden">
-          <Button variant="ghost" href="/news">
+          <Button variant="ghost" href="/ru/news">
             {viewAllLabel} →
           </Button>
         </div>

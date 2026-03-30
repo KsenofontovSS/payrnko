@@ -36,7 +36,7 @@ export function ServicesSection({ services, title }: ServicesSectionProps) {
                 <Typography variant="bodySmall" color="secondary" className="mb-4 flex-1">
                   {service.short_description}
                 </Typography>
-                <Button variant="ghost" size="sm" href={`/services/${service.slug}`}>
+                <Button variant="ghost" size="sm" href={`/ru/services/${service.slug}`}>
                   Подробнее →
                 </Button>
               </Card>

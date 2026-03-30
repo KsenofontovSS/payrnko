@@ -28,8 +28,8 @@ export default function ServiceDetailPage({
   const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/' },
-    { label: t('title'), href: '/services' },
+    { label: tNav('home'), href: '/ru' },
+    { label: t('title'), href: '/ru/services' },
     { label: service.title },
   ];
 
@@ -64,7 +64,7 @@ export default function ServiceDetailPage({
                   {otherServices.map((s) => (
                     <a
                       key={s.slug}
-                      href={`/services/${s.slug}`}
+                      href={`/ru/services/${s.slug}`}
                       className="block text-sm text-slate hover:text-royal transition-colors duration-200 py-1"
                     >
                       {s.title}

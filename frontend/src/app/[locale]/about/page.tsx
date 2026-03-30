@@ -15,7 +15,7 @@ export default function AboutPage() {
   const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/' },
+    { label: tNav('home'), href: '/ru' },
     { label: t('title') },
   ];
 
@@ -31,10 +31,10 @@ export default function AboutPage() {
             <span className="px-4 py-2 bg-royal text-white rounded-button text-sm font-medium">
               {t('history')}
             </span>
-            <a href="/about" className="px-4 py-2 text-sm font-medium text-slate hover:text-royal transition-colors">
+            <a href="/ru/about" className="px-4 py-2 text-sm font-medium text-slate hover:text-royal transition-colors">
               {t('management')}
             </a>
-            <a href="/about#documents" className="px-4 py-2 text-sm font-medium text-slate hover:text-royal transition-colors">
+            <a href="/ru/about#documents" className="px-4 py-2 text-sm font-medium text-slate hover:text-royal transition-colors">
               {t('documents')}
             </a>
           </div>

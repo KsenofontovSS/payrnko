@@ -18,7 +18,7 @@ export default function ContactsPage() {
   const tNav = createTranslator('ru', 'common.nav');
 
   const breadcrumbs = [
-    { label: tNav('home'), href: '/' },
+    { label: tNav('home'), href: '/ru' },
     { label: t('title') },
   ];
 

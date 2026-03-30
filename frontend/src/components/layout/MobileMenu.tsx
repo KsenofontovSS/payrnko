@@ -180,7 +180,7 @@ export function MobileMenu({ isOpen, onClose, navItems }: MobileMenuProps) {
             {/* Контакты в меню */}
             <div className="p-4 border-t border-silver">
               <Link
-                href="/contacts"
+                href="/ru/contacts"
                 className="block w-full text-center bg-royal text-white py-3 rounded-button font-medium hover:bg-royal/90 transition-colors duration-200"
                 onClick={onClose}
               >

@@ -42,7 +42,7 @@ export function CookieBanner() {
           <div className="mx-auto max-w-container flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <p className="text-sm text-slate flex-1">
               {t('message')}{' '}
-              <Link href="/privacy" className="text-royal hover:underline">
+              <Link href="/ru/privacy" className="text-royal hover:underline">
                 Подробнее
               </Link>
             </p>
