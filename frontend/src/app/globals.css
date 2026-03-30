@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply bg-snow text-charcoal font-sans antialiased;
+  }
+
+  /* Focus visible для доступности */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-royal;
+  }
+}
+
+/* Версия для слабовидящих */
+@layer utilities {
+  .high-contrast {
+    --tw-text-opacity: 1;
+    filter: contrast(1.4);
+  }
+
+  .high-contrast * {
+    border-color: currentColor !important;
+  }
+
+  .grayscale {
+    filter: grayscale(1);
+  }
+
+  .high-contrast.grayscale {
+    filter: contrast(1.4) grayscale(1);
+  }
+}
